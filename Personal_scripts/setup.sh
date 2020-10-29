@@ -15,17 +15,19 @@ fi
 #		build-essential git cmake c++11 libgl1-mesa-dev glew-utils 
 #		libglew-dev Libpython2.7-dev libgtk2.0-dev pkg-config  
 #		libavcodec-dev libavformat-dev libswscale-dev
+#		[Cmake V 3.16.3]
+#		[C++11 V 9.3.0]
 #	Repos:
 #		Pangolin [Newest version as of 25.Oktober2020]
 #		OpenCV V 3.4 [Other versions didn't seem to work for me]
-#		Eigen3 [Newest version as of 25.Oktober2020 (V )]
+#		Eigen3 [Newest version as of 25.Oktober2020 (V 3.90)]
 #
 #
 ################################################################################
 
 ## Start of functions
 
-#Installs packages but skips packages that are already isntalled
+#Installs packages but skips packages that are already installed
 # var="pkg1 pkg2"
 # Package_Installer  $var
 Package_Installer (){
@@ -144,7 +146,8 @@ Package_Installer $p_req_pkg
 
 echo "Pulling OpenCV repo..."
 
-debugging git clone -b 3.4 https://github.com/opencv/opencv.git
+#debugging git clone -b 3.4 https://github.com/opencv/opencv.git
+debugging git clone https://github.com/opencv/opencv.git
 
 echo "Do you want me to build OpenCV for you?"
 
