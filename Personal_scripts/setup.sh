@@ -115,7 +115,7 @@ p_req_pkg="libgl1-mesa-dev glew-utils libglew-dev Libpython2.7-dev"
 Package_Installer $p_req_pkg
 
 echo "Pulling Pangolin repo..."
-
+cd ~
 debugging git clone https://github.com/stevenlovegrove/Pangolin.git
 
 echo "Do you want me to build Pangolin for you?"
@@ -145,8 +145,7 @@ p_req_pkg="libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-de
 Package_Installer $p_req_pkg
 
 echo "Pulling OpenCV repo..."
-
-#debugging git clone -b 3.4 https://github.com/opencv/opencv.git
+cd ~
 debugging git clone https://github.com/opencv/opencv.git
 
 echo "Do you want me to build OpenCV for you?"
@@ -171,7 +170,7 @@ fi
 echo "OpenCV done!"
 
 echo "Pulling Eigen3 repo..."
-
+cd ~
 debugging git clone https://gitlab.com/libeigen/eigen.git
 
 echo "Do you want me to build eigen for you?"
