@@ -19,7 +19,7 @@ fi
 #		[C++11 V 9.3.0]
 #	Repos:
 #		Pangolin [Newest version as of 25.Oktober2020]
-#		OpenCV [Newest version as of 25.Oktover2020 (V 4.5.0)]
+#		OpenCV [Newer versions didn't work for me (V 3.4.0)]
 #		Eigen3 [Newest version as of 25.Oktober2020 (V 3.90)]
 #
 #
