@@ -146,7 +146,7 @@ Package_Installer $p_req_pkg
 
 echo "Pulling OpenCV repo..."
 cd ~
-debugging git clone https://github.com/opencv/opencv.git
+debugging git clone -b 3.4 https://github.com/opencv/opencv.git
 
 echo "Do you want me to build OpenCV for you?"
 
