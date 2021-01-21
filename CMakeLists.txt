@@ -111,3 +111,9 @@ add_executable(mono_euroc
 Examples/Monocular/mono_euroc.cc)
 target_link_libraries(mono_euroc ${PROJECT_NAME})
 
+# Max mono
+
+add_executable(mono_video
+Examples/Max/mono_video.cc)
+target_link_libraries(mono_video ${PROJECT_NAME})
+
