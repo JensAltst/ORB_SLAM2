@@ -53,10 +53,10 @@ int runSLAM();
 
 int main(int argc, char **argv)
 {
-    if (argc != 5)
+    if (argc != 4)
     {
         cerr << endl
-             << "Usage: ./mono_tum path_to_vocabulary path_to_settings path_to_sequence [1|0](save map?)" << endl;
+             << "Usage: ./mono_tum path_to_vocabulary path_to_settings path_to_sequence " << endl; //[1|0](save map?)
         return 1;
     }
 
@@ -64,9 +64,9 @@ int main(int argc, char **argv)
     settingsPath = argv[2];
     sequencePath = argv[3];
     //sequencePath = "http://192.168.178.69:4747/video";
-    saveMap = (bool)atoi(argv[4]);
+    //saveMap = (bool)atoi(argv[4]);
 
-    bool bUpdateMap = (int)atoi(argv[4]);
+    //bool bUpdateMap = (int)atoi(argv[4]);
     // Create SLAM system. It initializes all system threads and gets ready to process frames.
     ORB_SLAM2::System SLAM(vocabularyPath, settingsPath, ORB_SLAM2::System::MONOCULAR, true);//, bUpdateMap);
                         //SLAM(argv[1],argv[2],ORB_SLAM2::System::MONOCULAR,true);
