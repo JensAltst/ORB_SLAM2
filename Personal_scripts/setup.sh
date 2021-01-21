@@ -191,10 +191,58 @@ else
 	echo "Skipping building of Eigen"
 fi
 
-echo "To install/build Orbslam use the provided script"
-echo "cd ORB_SLAM2"
-echo "chmod +x build.sh"
-echo "./build.sh"
+
+echo "Continue with adjusted Thirdparty libraries and ORBSLAM build?"
+
+confirm=$( Confirm_Choice )
+if [ "$confirm" = "true" ]
+then
+	cd ~/ORB_SLAM2
+	
+	echo "Configuring and building Thirdparty/DBoW2 ..."
+
+	cd Thirdparty/DBoW2
+	mkdir build
+	cd build
+	cmake .. -DCMAKE_BUILD_TYPE=Release
+	make -j
+
+	cd ../../g2o
+
+	echo "Configuring and building Thirdparty/g2o ..."
+
+	mkdir build
+	cd build
+	cmake .. -DCMAKE_BUILD_TYPE=Release
+	make -j
+
+	cd ../../../
+
+	echo "Uncompress vocabulary ..."
+
+	cd Vocabulary
+	tar -xf ORBvoc.txt.tar.gz
+	cd ..
+
+	echo "Configuring and building ORB_SLAM2 ..."
+
+	mkdir build
+	cd build
+	cmake .. -DCMAKE_BUILD_TYPE=Release
+	make -j
+	
+	echo "You don't have to run ./build.sh now!"
+	
+else
+	echo "To install/build Orbslam use the provided script"
+	echo "cd ORB_SLAM2"
+	echo "chmod +x build.sh"
+	echo "./build.sh"
+fi
+
+
+
+
 
 
 
